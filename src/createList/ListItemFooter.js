@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const ListItemFooter = () => (
+const ListItemFooter = (props) => (
     <div className="list-card-footer">
         <div className="list-card-footer-actions">
             <FontAwesomeIcon
@@ -11,12 +11,13 @@ const ListItemFooter = () => (
                 size="1x"
             />
             <FontAwesomeIcon
+                onClick={() => props.deleteProduct(props.item.id)}
                 icon={faTrash}
                 color="#e91e63"
                 size="1x"
             />
         </div>
-        <p>R$ 50</p>
+        <p>R$ {props.item.total}</p>
     </div>
 )
 
